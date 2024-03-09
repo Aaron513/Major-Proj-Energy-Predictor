@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Great Energy Predictor</title>
+  <meta name="title" content="GEP">
+  <meta name="description" content="This is a agency that predicts energy consumption">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="icon" href="../static/img/favicon.ico" type="image/png" sizes="32x32">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../static/css/styles.css">
+
+  <!-- 
+    - preload images
+  -->
+  <!-- <link rel="preload" as="image" href="../static/img/hero-bg.jpg">
+  <link rel="preload" as="image" href="../static/img/hero-slide-1.jpg">
+  <link rel="preload" as="image" href="../static/img/hero-slide-2.jpg">
+  <link rel="preload" as="image" href="../static/img/hero-slide-3.jpg"> -->
+
+</head>
+
+<body>
+
+    <header class="header" data-header>
+        <div class="container">
+    
+          <a href="#" class="logo">
+            <img src="../static/img/img-logo.png" width="150" height="100" alt="GEP home" class="logo-light">
+          </a>
+    
+          <nav class="navbar" data-navbar>
+    
+            <div class="navbar-top">
+              <a href="#" class="logo">
+                <img src="../static/img/img-logo.png" width="74" height="24" alt="GEP home">
+              </a>
+    
+              <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+    
+            <ul class="navbar-list">
+    
+              <li>
+                <a href="index.html" class="navbar-link">Home</a>
+              </li>
+    
+              <li>
+                <a href="#" class="navbar-link">About</a>
+              </li>
+    
+              <li>
+                <a href="predictor.html" class="navbar-link">Predictor</a>
+              </li>
+    
+              <li>
+                <a href="#" class="navbar-link">Organisers</a>
+              </li>
+    
+              <li>
+                <a href="#" class="navbar-link">Contact Us</a>
+              </li>
+    
+            </ul>
+          </nav>
+    
+          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+    
+          <div class="overlay" data-nav-toggler data-overlay></div>
+    
+        </div>
+      </header>
+
+
+    <section class="section hero has-bg-image" aria-label="home"
+        style="background-image: url('../static/img/img-pred.jpg')">
+        <div class="container" style="padding-top: 200px; padding-bottom: 200px;">
+        </div>
+      </section>
+
+
+
+      <section class="about" aria-labelledby="about-label" style="padding-top: 120px; padding-bottom: 120px;">
+        <div class="container">
+          <form action="/predictor" method="post" onsubmit="return validateForm()">
+            <label for="use">What is your building used for?</label>
+            <select name="use" id="use">
+                <option value="Education">Education</option>
+                <option value="Entertainment">Entertainment/public assembly</option>
+                <option value="Food">Food sales and service</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Lodging">Lodging/residential</option>
+                <option value="Manufacturing">Manufacturing/industrial</option>
+                <option value="Office">Office</option>
+                <option value="Parking">Parking</option>
+                <option value="Public">Public services</option>
+                <option value="Religious">Religious worship</option>
+                <option value="Retail">Retail</option>
+                <option value="Services">Services</option>
+                <option value="Technology">Technology/science</option>
+                <option value="Utility">Utility</option>
+                <option value="Warehouse">Warehouse/storage</option>
+                <option value="Other">Other</option>
+            </select>
+        
+            <label for="building" style="display: block;">Building:</label>
+            <input type="text" id="building" name="building" style="display: block;">
+            
+            <label for="meter" style="display: block;">Meter:</label>
+            <input type="number" id="meter" name="meter" min="0" max="3" style="display: block;">
+            
+            <label for="square_feet" style="display: block;">Square Feet:</label>
+            <input type="number" id="square_feet" name="square_feet" step="any" style="display: block;">
+            
+            <label for="air_temperature" style="display: block;">Air Temperature:</label>
+            <input type="number" id="air_temperature" name="air_temperature" step="any" style="display: block;">
+            
+            <label for="dew_temperature" style="display: block;">Dew Temperature:</label>
+            <input type="number" id="dew_temperature" name="dew_temperature" step="any" style="display: block;">
+            
+            <label for="wind_speed" style="display: block;">Wind Speed:</label>
+            <input type="number" id="wind_speed" name="wind_speed" step="any" style="display: block;">
+            
+            <label for="timestamp" style="display: block;">Timestamp:</label>
+            <input type="datetime-local" id="timestamp" name="timestamp" style="display: block;">
+            
+            <button type="submit">Submit</button>
+        </form>
+        
+        
+        </div>
+      </section>
+
+
+
+
+    <footer class="footer">
+        <div class="container grid-list">
+    
+          <div class="footer-brand">
+    
+            <a href="#" class="logo">
+              <img src="../static/img/img-logo.png" width="170" height="150" alt="GEP home">
+            </a>
+    
+            <p class="footer-text">
+              &copy; 2024 GEP. <br> All rights reserved.
+            </p>
+    
+          </div>
+    
+          <ul class="footer-list">
+    
+            <li>
+              <p class="h4 footer-list-title">Get in Touch</p>
+            </li>
+    
+            <li>
+              <address class="footer-text">
+                Moonshine St. 14/05 Light City, London, United Kingdom
+              </address>
+            </li>
+    
+            <li>
+              <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
+            </li>
+    
+            <li>
+              <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
+            </li>
+    
+          </ul>
+    
+        </div>
+      </footer>
+    
+    
+    
+    
+    
+      <!-- 
+        - custom js link
+      -->
+      <script src="../static/js/script.js"></script>
+    
+      <!-- 
+        - ionicon
+      -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    </body>
+    
+    </html>
