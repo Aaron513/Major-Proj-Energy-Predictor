@@ -21,12 +21,12 @@ def index():
 def predictor():
     return render_template('predictor.html')
 
-@app.route('/predictor', methods=['POST'])
+@app.route('/result', methods=['POST'])
 def submit():
     # Get form data
     building = float(request.form['building'])
     square_feet = float(request.form['square_feet'])
-    meter = int(request.form['meter'])
+    res = int(request.form['res'])
     air_temperature = float(request.form['air_temperature'])
     dew_temperature = float(request.form['dew_temperature'])
     wind_speed = float(request.form['wind_speed'])
@@ -41,7 +41,7 @@ def submit():
     d = {
         'building': [building],
         'square_feet': [square_feet],
-        'meter': [meter],
+        'meter': [res],
         'air_temperature': [air_temperature],
         'dew_temperature': [dew_temperature],
         'wind_speed': [wind_speed],

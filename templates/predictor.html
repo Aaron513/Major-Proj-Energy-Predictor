@@ -45,7 +45,7 @@
     <header class="header" data-header>
         <div class="container">
     
-          <a href="#" class="logo">
+          <a href="/" class="logo">
             <img src="../static/img/img-logo.png" width="150" height="100" alt="GEP home" class="logo-light">
           </a>
     
@@ -64,7 +64,7 @@
             <ul class="navbar-list">
     
               <li>
-                <a href="index.html" class="navbar-link">Home</a>
+                <a href="/" class="navbar-link">Home</a>
               </li>
     
               <li>
@@ -72,7 +72,7 @@
               </li>
     
               <li>
-                <a href="predictor.html" class="navbar-link">Predictor</a>
+                <a href="/predictor" class="navbar-link">Predictor</a>
               </li>
     
               <li>
@@ -105,9 +105,9 @@
 
 
       <section class="about" aria-labelledby="about-label" style="padding-top: 120px; padding-bottom: 120px;">
-        <div class="container">
-          <form action="/predictor" method="post" onsubmit="return validateForm()">
-            <label for="use">What is your building used for?</label>
+        <!-- <div class="container"> -->
+          <!-- <form action="/predictor" method="post" onsubmit="return validateForm()">
+            <label for="use">What purpose does your building serve?</label>
             <select name="use" id="use">
                 <option value="Education">Education</option>
                 <option value="Entertainment">Entertainment/public assembly</option>
@@ -127,10 +127,10 @@
                 <option value="Other">Other</option>
             </select>
         
-            <label for="building" style="display: block;">Building:</label>
+            <label for="building" style="display: block;">Building ID:</label>
             <input type="text" id="building" name="building" style="display: block;">
             
-            <label for="meter" style="display: block;">Meter:</label>
+            <label for="meter" style="display: block;">Resource Gauge:</label>
             <input type="number" id="meter" name="meter" min="0" max="3" style="display: block;">
             
             <label for="square_feet" style="display: block;">Square Feet:</label>
@@ -149,56 +149,124 @@
             <input type="datetime-local" id="timestamp" name="timestamp" style="display: block;">
             
             <button type="submit">Submit</button>
-        </form>
+        </form> -->
         
-        
+        <div class="box">
+          <form class="form" action="/result" method="post" onsubmit="return validateForm()">
+            <h2>Please provide your building details for your personalized prediction.</h2>
+            <div class="inputBox" >
+              <span>What purpose does your building serve?</span>
+              <select name="use" id="use" class="searchable-use">
+                <option value="Education">Education</option>
+                <option value="Entertainment">Entertainment/public assembly</option>
+                <option value="Food">Food sales and service</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Lodging">Lodging/residential</option>
+                <option value="Manufacturing">Manufacturing/industrial</option>
+                <option value="Office">Office</option>
+                <option value="Parking">Parking</option>
+                <option value="Public">Public services</option>
+                <option value="Religious">Religious worship</option>
+                <option value="Retail">Retail</option>
+                <option value="Services">Services</option>
+                <option value="Technology">Technology/science</option>
+                <option value="Utility">Utility</option>
+                <option value="Warehouse">Warehouse/storage</option>
+                <option value="Other">Other</option>
+            </select>
+            </div>
+            <div class="inputBox">
+              <span>Resource Gauge:</span>
+              <select name="res" id="res">
+                <option value="0">Electricity</option>
+                <option value="1">Chilled Water</option>
+                <option value="2">Steam</option>
+                <option value="3">Hot Water</option>
+            </select>
+            <span class="icon-res"></span>
+            </div>
+            <div class="inputBox">
+              <span>Building ID:</span>
+              <input type="text" id="building" name="building" required="required" placeholder="Any idea on your ID?">
+              <span class="icon-id"></span>
+            </div>
+            <div class="grid-container">
+            <div class="inputBox" id="para">
+              <span>Square Feet:</span>
+              <input type="number" id="square_feet" name="square_feet" required="required" step="any" placeholder="Give us your size (building)">
+              <span class="icon-ft"></span>
+            </div>
+            <div class="inputBox" id="para">
+              <span>Air Temperature:</span>
+              <input type="number" id="air_temperature" name="air_temperature" required="required" step="any" placeholder="How's the temp over there?">
+              <span class="icon-air"></span>
+            </div>
+            <div class="inputBox" id="para">
+              <span>Dew Temperature:</span>
+              <input type="number" id="dew_temperature" name="dew_temperature" required="required" step="any" placeholder="Got the dew temp?">
+              <span class="icon-dew"></span>
+            </div>
+            <div class="inputBox" id="para">
+              <span>Wind Speed:</span>
+              <input type="number" id="wind_speed" name="wind_speed" required="required" step="any" placeholder="Tell us the speed">
+              <span class="icon-wind"></span>
+            </div>
+            </div>
+            <div class="inputBox">
+              <span>Timestamp:</span>
+              <input type="datetime-local" id="timestamp" name="timestamp" required="required">
+            </div>
+            <button class="button-33" role="button" type="submit">Submit</button>
+          </form>
+        <!-- </div> -->
+          
         </div>
       </section>
 
 
+  <!-- 
+    - #FOOTER
+  -->
 
+  <footer class="footer">
+    <div class="container grid-list">
 
-    <footer class="footer">
-        <div class="container grid-list">
-    
-          <div class="footer-brand">
-    
-            <a href="#" class="logo">
-              <img src="../static/img/img-logo.png" width="170" height="150" alt="GEP home">
-            </a>
-    
-            <p class="footer-text">
-              &copy; 2024 GEP. <br> All rights reserved.
-            </p>
-    
-          </div>
-    
-          <ul class="footer-list">
-    
-            <li>
-              <p class="h4 footer-list-title">Get in Touch</p>
-            </li>
-    
-            <li>
-              <address class="footer-text">
-                Moonshine St. 14/05 Light City, London, United Kingdom
-              </address>
-            </li>
-    
-            <li>
-              <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
-            </li>
-    
-            <li>
-              <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
-            </li>
-    
-          </ul>
-    
-        </div>
-      </footer>
-    
-    
+      <div class="footer-brand">
+
+        <a href="#" class="logo">
+          <img src="../static/img/img-logo.png" width="170" height="150" alt="GEP home">
+        </a>
+
+        <p class="footer-text">
+          &copy; 2024 GEP. <br> All rights reserved.
+        </p>
+
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Get in Touch</p>
+        </li>
+
+        <li>
+          <address class="footer-text">
+            Mount Poinsur, Borivali West, Mumbai, Maharashtra 400103
+          </address>
+        </li>
+
+        <li>
+          <a href="mailto:info@email.com" class="footer-link">gep2024@email.com</a>
+        </li>
+
+        <li>
+          <a href="tel:001234567890" class="footer-link">+91 123 456 7890</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </footer>
     
     
     
@@ -206,6 +274,7 @@
         - custom js link
       -->
       <script src="../static/js/script.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
       <!-- 
         - ionicon

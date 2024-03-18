@@ -1001,3 +1001,210 @@
     .feature-list { grid-template-columns: 1fr 1fr; }
   
   }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    position: relative;
+  }
+
+  .box form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box form h2{
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding-bottom: 25px;
+    color: green;
+  }
+
+  .box form .inputBox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+  }
+
+  .box .grid-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+  }
+
+  .box form #para{
+    position: relative;
+    width: 50%;
+    padding-right: 25px;
+  }
+
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+      /*-webkit-appearance: none; /* Remove default appearance */
+      appearance: none; /* Remove default appearance */
+  }
+
+  select#use {
+    width: 300px; /* Set width to desired size */
+    padding: 5px; /*Add padding for better spacing*/
+    border: 2px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add curved border */
+    font-size: 16px; /* Set font size */
+    /*appearance: none; /* Remove default appearance (arrow) */
+    background-color: white; /* Set background color */
+    background-repeat: no-repeat; /* Prevent icon from repeating */
+    background-position: right 10px center; /* Position icon */
+  }
+  
+  /* Hover effect */
+  select#use:hover {
+    border-color: #aaa; /* Change border color on hover */
+  }
+  
+  /* Focus effect */
+  select#use:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #007bff; /* Change border color on focus */
+  }
+
+  .searchable-use {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  /* Focus effect */
+  .searchable-use:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  select#res {
+    width: 300px; /* Set width to desired size */
+    padding: 5px; /*Add padding for better spacing*/
+    border: 2px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add curved border */
+    font-size: 16px; /* Set font size */
+    appearance: none; /* Remove default appearance (arrow) */
+    background-color: white; /* Set background color */
+    background-repeat: no-repeat; /* Prevent icon from repeating */
+    background-position: right 10px center; /* Position icon */
+  }
+  
+  /* Hover effect */
+  select#res:hover {
+    border-color: #aaa; /* Change border color on hover */
+  }
+  
+  /* Focus effect */
+  select#res:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #007bff; /* Change border color on focus */
+  }
+
+  .inputBox .icon-res {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    /* transform: translateY(-50%); */
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    background-image: url('/static/img/resourse.png'); /* Specify path to your icon */
+    background-size: cover;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+  }
+
+  .inputBox .icon-id {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    /* transform: translateY(-50%); */
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    background-image: url('/static/img/buildings.png'); /* Specify path to your icon */
+    background-size: cover;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+  }
+
+  .inputBox .icon-ft {
+    position: absolute;
+    top: 55%;
+    right: 30px;
+    /* transform: translateY(-50%); */
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    background-image: url('/static/img/sqfeet.png'); /* Specify path to your icon */
+    background-size: cover;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+  }
+
+  .inputBox .icon-air {
+    position: absolute;
+    top: 55%;
+    right: 30px;
+    /* transform: translateY(-50%); */
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    background-image: url('/static/img/airtemp.png'); /* Specify path to your icon */
+    background-size: cover;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+  }
+
+  .inputBox .icon-dew {
+    position: absolute;
+    top: 55%;
+    right: 30px;
+    /* transform: translateY(-50%); */
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    background-image: url('/static/img/dewtemp.png'); /* Specify path to your icon */
+    background-size: cover;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+  }
+
+  .inputBox .icon-wind {
+    position: absolute;
+    top: 55%;
+    right: 30px;
+    /* transform: translateY(-50%); */
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    background-image: url('/static/img/windspeed.png'); /* Specify path to your icon */
+    background-size: cover;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+  }
+
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  /* font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif; */
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  margin: 30px auto; /* Center horizontally and add top margin */
+}
+
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}

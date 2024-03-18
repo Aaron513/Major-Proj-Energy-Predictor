@@ -147,11 +147,11 @@ for (let i = 0, len = accordions.length; i < len; i++) { initAccordion(accordion
 
 function validateForm() {
   // Validate meter (0, 1, 2, 3)
-  var meter = document.getElementById("meter").value;
-  if (meter < 0 || meter > 3) {
-      alert("Meter value must be between 0 and 3.");
-      return false;
-  }
+  // var meter = document.getElementById("res").value;
+  // if (meter < 0 || meter > 3) {
+  //     alert("Meter value must be between 0 and 3.");
+  //     return false;
+  // }
 
   // Validate square_feet, air_temperature, dew_temperature, wind_speed (numeric)
   var square_feet = document.getElementById("square_feet").value;
