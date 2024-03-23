@@ -84,7 +84,9 @@ def submit():
 
     predicted_energy_kwh_scalar = s.item()
 
-    return f'Predicted energy consumption: {predicted_energy_kwh_scalar:.2f} kW/h'
+    return render_template('result.html', predicted_energy_kwh_scalar=predicted_energy_kwh_scalar)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

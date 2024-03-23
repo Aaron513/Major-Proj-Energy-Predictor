@@ -173,3 +173,44 @@ function validateForm() {
 
   return true;
 }
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   document.getElementById('dropButton').addEventListener('click', function() {
+//       var list = document.getElementById('droppedList');
+//       list.innerHTML = ''; // Clear the list first
+
+//       var itemsContent = ['Apple', 'Banana', 'Orange', 'Mango', 'Grapes'];
+//       // Add 5 points to the list
+//       for (var i = 1; i <= 5; i++) {
+//           var listItem = document.createElement('li');
+          
+//           list.appendChild(listItem);
+//       }
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('dropButton').addEventListener('click', function() {
+      var list = document.getElementById('droppedList');
+      list.innerHTML = ''; // Clear the list first
+
+      // Add specific content to each list item
+      var itemsContent = ['<strong>Energy-Efficient Lighting:</strong> Replace traditional bulbs with LED lights, which consume significantly less energy and have a longer lifespan.',
+       '<strong>Energy-Efficient HVAC Systems:</strong> Upgrade to energy-efficient heating, ventilation, and air conditioning (HVAC) systems and ensure regular maintenance to optimize performance.',
+       '<strong>Insulation:</strong> Improve insulation in walls, ceilings, and windows to reduce heat loss during winters and heat gain during summers, thereby decreasing reliance on heating and cooling systems.',
+       '<strong>Energy-Efficient Appliances:</strong> Choose Energy Star-rated appliances for the office kitchen and break areas to reduce energy consumption.', 
+       '<strong>Occupancy Sensors:</strong> Install occupancy sensors for controlling lighting, heating, and cooling systems in areas like conference rooms, restrooms, and storage spaces.',
+       '<strong>Employee Awareness Programs:</strong> Educate employees about energy-saving practices and encourage them to adopt simple habits like turning off lights and equipment when not in use.',
+       '<strong>Regular Maintenance:</strong> Conduct regular maintenance of building systems and equipment to ensure they operate efficiently and identify any issues promptly.',
+       '<strong>Seal Leaks:</strong> Seal gaps and leaks in windows, doors, and ductwork to prevent air leakage, which can lead to energy wastage.'];
+      for (var i = 0; i < 5; i++) {
+          var listItem = document.createElement('li');
+          listItem.insertAdjacentHTML('beforeend', itemsContent[i]);
+          list.appendChild(listItem);
+      }
+
+      // Hide the button
+      var button = document.getElementById('dropButton');
+      button.style.display = 'none';
+  });
+});
