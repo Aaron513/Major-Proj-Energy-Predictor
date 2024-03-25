@@ -1268,3 +1268,14 @@
 .button-62:not([disabled]):hover {
   box-shadow: 0 0 .25rem rgba(44,187,99,.25), -.125rem -.125rem 1rem rgba(44,187,99,.25), .125rem .125rem 1rem rgba(44,187,99,.25);
 }
+
+#sugg{
+  padding-bottom: 25px;
+}
+
+#droppedList li{
+  padding-bottom: 20px;
+  font-size: large;
+  color: #47A992;
+  /* color: #F45050; */
+}

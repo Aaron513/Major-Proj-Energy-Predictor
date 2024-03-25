@@ -21,6 +21,14 @@ def index():
 def predictor():
     return render_template('predictor.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/organisers')
+def organisers():
+    return render_template('organisers.html')
+
 @app.route('/result', methods=['POST'])
 def submit():
     # Get form data
