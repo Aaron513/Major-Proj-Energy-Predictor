@@ -1239,11 +1239,24 @@
 }
 
 /* CSS */
+/* Define classes for different background colors */
+.button-62-red {
+  background: linear-gradient(to bottom right, rgba(255, 0, 0, .15), rgba(255, 0, 0, .15));
+}
+
+.button-62-green {
+  background: linear-gradient(to bottom right, rgba(0, 255, 0, .15), rgba(0, 255, 0, .15));
+}
+
+.button-62-yellow {
+  background: linear-gradient(to bottom right, rgba(255, 255, 0, .15), rgba(255, 255, 0, .15));
+}
+
+/* Rest of the button styles */
 .button-62 {
-  background: linear-gradient(to bottom right, rgba(44, 187, 99, .15), rgba(44, 187, 99, .15));
   border: 0;
   border-radius: 12px;
-  color: green;
+  color: black;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -1262,11 +1275,11 @@
 }
 
 .button-62:not([disabled]):focus {
-  box-shadow: 0 0 .25rem rgba(44, 187, 99, .2), -.125rem -.125rem 1rem rgba(44,187,99,.25), .125rem .125rem 1rem rgba(44,187,99,.25);
+  box-shadow: 0 0 .25rem rgba(64, 64, 64, .2), -.125rem -.125rem 1rem rgba(64, 64, 64, .25), .125rem .125rem 1rem rgba(64, 64, 64, .25);
 }
 
 .button-62:not([disabled]):hover {
-  box-shadow: 0 0 .25rem rgba(44,187,99,.25), -.125rem -.125rem 1rem rgba(44,187,99,.25), .125rem .125rem 1rem rgba(44,187,99,.25);
+  box-shadow: 0 0 .25rem rgba(64, 64, 64, .25), -.125rem -.125rem 1rem rgba(64, 64, 64, .25), .125rem .125rem 1rem rgba(64, 64, 64, .25);
 }
 
 #sugg{
@@ -1276,6 +1289,6 @@
 #droppedList li{
   padding-bottom: 20px;
   font-size: large;
-  color: #47A992;
+  color: darkslategrey;
   /* color: #F45050; */
 }

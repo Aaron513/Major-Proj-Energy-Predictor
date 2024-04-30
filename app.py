@@ -29,6 +29,15 @@ def about():
 def organisers():
     return render_template('organisers.html')
 
+# Your calculation logic for comp value
+def calculate_comp(tot_energy, avg_daily_comp):
+    if tot_energy > (avg_daily_comp * 1.5):
+        return "High"
+    elif tot_energy > avg_daily_comp:
+        return "Medium"
+    else:
+        return "Low"
+
 @app.route('/result', methods=['POST'])
 def submit():
     # Get form data
@@ -75,6 +84,49 @@ def submit():
             use_key = f'primary_use_{use.replace("/", "_")}'  # Replace "/" with "_"
             d[use_key] = [0]
 
+    #dicts for all meters
+    for i in range(4):
+        d['meter'] = [i]
+        data = pd.DataFrame(d)
+
+        # Make predictions
+        s = 0
+        for j in range(1, 25):
+            data['Hour'] = j
+            z = lgbm_model.predict(data)
+            s += np.expm1(z)
+
+        # Convert predicted energy to kW/h
+        # predicted_energy_kwh = s / 1000
+        if i == 0:
+            predicted_energy_kwh_scalar_elec = abs(s[0])
+        elif i == 1:
+            predicted_energy_kwh_scalar_chill = abs(s[0])
+        elif i == 2:
+            predicted_energy_kwh_scalar_steam = abs(s[0])
+        else:
+            predicted_energy_kwh_scalar_hot = abs(s[0])
+
+        
+    tot_energy = predicted_energy_kwh_scalar_elec + predicted_energy_kwh_scalar_chill + predicted_energy_kwh_scalar_steam + predicted_energy_kwh_scalar_hot
+    print(tot_energy)
+    # print(predicted_energy_kwh_scalar_elec)
+    # print(predicted_energy_kwh_scalar_chill)
+    # print(predicted_energy_kwh_scalar_steam)
+    # print(predicted_energy_kwh_scalar_hot)
+
+    comp = None
+    avg_daily_comp = square_feet / 540
+    if tot_energy > (avg_daily_comp * 4):
+        comp = "High"
+    elif tot_energy > (avg_daily_comp):
+        comp = "Medium"
+    else:
+        comp = "Low"
+
+    print(avg_daily_comp)
+
+    d['meter'] = [res]
     print(d)
 
     # Create DataFrame
@@ -90,11 +142,9 @@ def submit():
     # Convert predicted energy to kW/h
     # predicted_energy_kwh = s / 1000
 
-    predicted_energy_kwh_scalar = s.item()
+    predicted_energy_kwh_scalar = abs(s[0])
 
-    return render_template('result.html', predicted_energy_kwh_scalar=predicted_energy_kwh_scalar)
-
-
+    return render_template('result.html', predicted_energy_kwh_scalar=predicted_energy_kwh_scalar, comp=comp, tot = tot_energy)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -189,8 +189,6 @@ function validateForm() {
 //   });
 // });
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('dropButton').addEventListener('click', function() {
       var list = document.getElementById('droppedList');
@@ -237,3 +235,4 @@ var itemsContent = [
   '<strong>Regular Maintenance:</strong> Conduct regular maintenance of building systems and equipment to ensure they operate efficiently and identify any issues promptly.',
   '<strong>Seal Leaks:</strong> Seal gaps and leaks in windows, doors, and ductwork to prevent air leakage, which can lead to energy wastage.'
 ];
+

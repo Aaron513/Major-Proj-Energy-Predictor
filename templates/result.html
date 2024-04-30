@@ -68,15 +68,7 @@
               </li>
     
               <li>
-                <a href="/about" class="navbar-link" style="color: #8CB9BD;">About</a>
-              </li>
-    
-              <li>
                 <a href="/predictor" class="navbar-link" style="color: #8CB9BD;">Predictor</a>
-              </li>
-    
-              <li>
-                <a href="/organisers" class="navbar-link" style="color: #8CB9BD;">Organisers</a>
               </li>
     
             </ul>
@@ -103,11 +95,26 @@
       <section class="about" aria-labelledby="about-label" style="padding-top: 25px; padding-bottom: 120px;">
           <div class="container1">
             <div class="custom-content">
-              <h2>Your monthly prediction is</h2>
+              <h2>Your Daily prediction is</h2>
               <p>Predicted energy consumption: {{ predicted_energy_kwh_scalar }} kW/h</p>
+              <p style="padding-top: 10px;">Total energy consumption: {{ tot }} kW/h</p>
+              {% if comp == 'High' %}
+                  <p style="padding-top: 30px; color:red">Your Prediction is highly over the limit</p>
+              {% elif comp == 'Medium' %}
+                  <p style="padding-top: 30px; color:yellow">Your Prediction is over the limit</p>
+              {% else %}
+                  <p style="padding-top: 30px; color:lawngreen">Your Prediction is green (Well within the limit)</p>
+              {% endif %}
             </div>
             <div class="custom-content">
-              <button class="button-62" role="button" id="dropButton">Let us help you.</button>
+              <!-- Include necessary CSS classes dynamically based on comp value -->
+              {% if comp == 'High' %}
+              <button class="button-62 button-62-red" role="button" id="dropButton">Let us help you.</button>
+              {% elif comp == 'Medium' %}
+              <button class="button-62 button-62-yellow" role="button" id="dropButton">Let us help you.</button>
+              {% else %}
+              <button class="button-62 button-62-green" role="button" id="dropButton">Let us help you.</button>
+              {% endif %}
               <ul id="droppedList"></ul>
             </div>
           </div>
